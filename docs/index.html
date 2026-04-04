@@ -1,162 +1,256 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koza IPTV Projesi</title>
+    <title>Koza IPTV | Tizen Smart TV Edition</title>
     <style>
         :root {
-            --bg-color: #f3e5f5; /* Çok açık mor arka plan */
-            --primary-color: #7e57c2; /* Ana mor tonu */
-            --dark-color: #4527a0; /* Koyu mor (başlıklar için) */
-            --text-color: #333;
-            --white: #ffffff;
+            --bg-color: #0f0a19; /* Çok koyu mor/siyah */
+            --card-bg: #1a1425;
+            --primary-purple: #9d72ff;
+            --secondary-purple: #6c4ab6;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --accent-glow: rgba(157, 114, 255, 0.2);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: var(--white);
-            border-bottom: 2px solid var(--primary-color);
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .container {
-            width: 80%;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        h1, h2, h3 {
-            color: var(--dark-color);
-            font-weight: 600;
+        /* Hero Section */
+        header {
+            padding: 80px 0 40px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--secondary-purple) 0%, var(--bg-color) 70%);
+        }
+
+        .badge {
+            background: var(--primary-purple);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
-            margin: 0;
-            font-size: 2rem;
-            text-align: center;
+            font-size: 3.5rem;
+            margin: 20px 0 10px;
+            background: linear-gradient(to right, #fff, var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        main {
-            flex: 1;
-            padding: 40px 0;
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 30px;
         }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            background-color: var(--white);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            border-top: 3px solid var(--primary-color);
-            transition: transform 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 25px;
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-top: 20px;
-            font-weight: bold;
-            transition: background-color 0.2s;
         }
 
-        .cta-button:hover {
-            background-color: var(--dark-color);
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
+
+        .btn-primary {
+            background-color: var(--primary-purple);
+            color: white;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #b08dff;
+        }
+
+        /* Lang Alert */
+        .lang-notice {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 40px 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* Grid Sections */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+            font-size: 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: border 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary-purple);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-purple);
+        }
+
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .specs-table td, .specs-table th {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: left;
+        }
+
+        .specs-table th { color: var(--primary-purple); }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #2c2c2c;
-            color: #ddd;
-            margin-top: auto;
+            padding: 60px 0;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 80px;
+        }
+
+        code {
+            background: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--primary-purple);
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Koza IPTV</h1>
+<header>
+    <div class="container">
+        <span class="badge">v2.1.0 RC - 2026 Edition</span>
+        <h1>Koza IPTV</h1>
+        <p class="tagline">A lightweight, high-performance IPTV player specifically designed for Samsung Tizen Smart TVs.</p>
+        
+        <div class="btn-group">
+            <a href="https://github.com/kkoozzaa/Koza-IPTV" class="btn btn-primary">Go to GitHub Repository</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="container">
-        <section class="hero">
-            <h2>Akıllı TV Deneyimini Koza ile Yaşa</h2>
-            <p>Modern arayüz, kesintisiz yayın ve kişiselleştirilebilir özellikler. Tizen Smart TV'ler için geliştirildi.</p>
-            <a href="KozaIPTV.wgt" class="cta-button">WGT Dosyasını İndir</a>
-        </section>
+<main class="container">
+    
+    <div class="lang-notice">
+        <strong>🌍 Language Note:</strong> Although this website and documentation are in English, the <strong>Koza IPTV application interface is currently only available in Turkish.</strong>
+    </div>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>Minimalist Tasarım</h3>
-                <p>Göz yormayan, morun en güzel tonlarını kullanan modern bir kullanıcı arayüzü.</p>
+    <section id="features">
+        <h2 class="section-title">🚀 Key Features</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Hybrid Multi-Source</h3>
+                <p>Fetches and merges live channels from multiple M3U sources simultaneously for maximum uptime.</p>
             </div>
-            <div class="feature-card">
-                <h3>Tizen Uyumlu</h3>
-                <p>Tizen tabanlı Samsung Smart TV'ler için özel olarak optimize edilmiştir.</p>
+            <div class="card">
+                <h3>Intelligent UI/UX</h3>
+                <p>Minimalist sidebar navigation that stays hidden until you need it. Immersive viewing at its best.</p>
             </div>
-            <div class="feature-card">
-                <h3>Açık Kaynak</h3>
-                <p>Proje kodlarını incele, geliştirilmesine katkıda bulun veya kendi kopyanı oluştur.</p>
+            <div class="card">
+                <h3>Hold OK Gesture</h3>
+                <p>Unique long-press system to access advanced settings and favorites without cluttering the screen.</p>
             </div>
-        </section>
-    </main>
+            <div class="card">
+                <h3>Native Performance</h3>
+                <p>Built with <code>AVPlay</code> integration for ultra-fast buffering and native 1080p/4K upscaling.</p>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Koza-IPTV Projesi | <a href="README.md" style="color: #aaa;">README Dosyasını Oku</a></p>
-    </footer>
+    <section id="technical">
+        <h2 class="section-title">🛠️ Technical Specs</h2>
+        <table class="specs-table">
+            <tr>
+                <th>Platform</th>
+                <td>Samsung Tizen OS (Smart TV)</td>
+            </tr>
+            <tr>
+                <th>Engine</th>
+                <td>Tizen Web API & Samsung Product API</td>
+            </tr>
+            <tr>
+                <th>Stack</th>
+                <td>Vanilla JavaScript, HTML5, CSS3</td>
+            </tr>
+            <tr>
+                <th>Auto-Resume</th>
+                <td>Remembers last category and channel after reboot</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="controls">
+        <h2 class="section-title">⌨️ Remote Controls</h2>
+        <div class="card">
+            <p><strong>UP / DOWN:</strong> Navigate channels</p>
+            <hr style="opacity: 0.1">
+            <p><strong>LEFT / RIGHT:</strong> Switch Categories</p>
+            <hr style="opacity: 0.1">
+            <p><strong>OK (Short):</strong> Play Channel</p>
+            <hr style="opacity: 0.1">
+            <p><strong>OK (Long):</strong> Open Favorites & Options</p>
+        </div>
+    </section>
+
+    <section id="disclaimer" style="margin-top: 50px; opacity: 0.7; font-size: 0.85rem;">
+        <p><strong>⚠️ Disclaimer:</strong> This is an open-source player. We do not provide M3U lists or any content. Users are responsible for the content they stream.</p>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Koza-IPTV Project. Developed with AI for the next generation of Smart TVs.</p>
+    </div>
+</footer>
 
 </body>
 </html>
