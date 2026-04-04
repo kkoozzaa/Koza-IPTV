@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+    <title>Koza IPTV Pro</title>
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div id="loaderText">SİSTEM BAŞLATILIYOR...</div>
+        <div id="debugSubText">Donanım katmanı kontrol ediliyor...</div>
+    </div>
+
+    <div id="globalUI" class="show">
+        <div id="clock">00:00</div>
+
+        <div id="leftMenu">
+            <div id="categoryHeader">
+                <span id="prevCat" class="cat-side"></span>
+                <div id="currentCat" class="cat-main">KATEGORİ</div>
+                <span id="nextCat" class="cat-side"></span>
+            </div>
+            <div id="channelContainer">
+                <div id="channelList"></div>
+            </div>
+        </div>
+
+        <div id="infoBanner">
+            <div id="infoNumber">CH</div>
+            <div id="infoText">
+                <h2 id="infoName">Kanal Adı</h2>
+                <div id="speedBadge" class="badge" style="display:none;">HIZ: --ms</div>
+                <p id="infoDesc">Kategori ve Bağlantı Bilgisi</p>
+            </div>
+        </div>
+
+        <div id="mergeModal" class="modal">
+            <div class="modal-content">
+                <h1>KOZA-IPTV</h1>
+                <div id="mergeList"></div>
+                <p class="hint"></p>
+            </div>
+        </div>
+        
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <h1></h1>
+                <div class="setting-item active"> <span class="val"></span></div>
+                <div class="setting-item"><span class="val"></span></div>
+                <div class="setting-item"> </div>
+                <p class="hint"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

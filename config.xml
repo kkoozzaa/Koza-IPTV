@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://sample/KozaIPTV" version="1.0.0" viewmodes="fullscreen">
+    <name>KozaIPTV</name>
+    <description>IPTV Player</description>
+    <icon src="icon.png"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <tizen:application id="tviptvplay.KozaIPTV" package="tviptvplay" required_version="4.0"/>
+    <tizen:content-security-policy>default-src *; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data:; media-src *; connect-src *;</tizen:content-security-policy>
+    <tizen:allow-navigation>*</tizen:allow-navigation>
+    
+    
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/mediaplayer"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/avplay"/>
+    <tizen:privilege name="http://tizen.org/privilege/network.public"/>
+    <tizen:privilege name="http://tizen.org/privilege/mediacontent"/>
+    
+    <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="enable" encryption="disable"/>
+    
+    <tizen:category name="http://tizen.org/category/rt_ambience.background"/>
+    <tizen:category name="http://tizen.org/category/media"/>
+
+	<tizen:metadata key="http://samsung.com/tv/metadata/use.all.screen.resolution" value="true"/>
+    <tizen:profile name="tv"/>
+    <access origin="*" subdomains="true"/>
+    
+</widget>
