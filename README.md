@@ -1,3 +1,5 @@
+> **Note:** This project was developed with the help of AI.
+
 \# Koza IPTV - Tizen Smart TV Edition
 
 
